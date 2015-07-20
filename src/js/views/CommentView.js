@@ -30,7 +30,7 @@ define(
                 this.windowPopup(e.currentTarget.href, 500, 300);
             },
             addFBEmbed: function() {
-                pym.Parent('iapp-fb-embed', 'http://www.gannett-cdn.com/experiments/usatoday/2015/04/intheirwords-lgbt-fb/index.html');
+                pym.Parent('iapp-fb-embed', 'http://www.gannett-cdn.com/experiments/usatoday/2015/07/intheirwords-transgender-fb/index.html');
             },
             windowPopup: function(url, width, height) {
                 // Calculate the position of the popup so
