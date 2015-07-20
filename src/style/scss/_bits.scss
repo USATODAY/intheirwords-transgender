@@ -1,0 +1,123 @@
+/************
+
+Colors
+
+************/
+
+$dark-blue: #144F71;
+$blue: #1B9CFA;
+$blue2: #1b88fa;
+$light-blue: #9ed5fb;
+$dark-grey: #231F20;
+$medium-grey: #6D6E70;
+$light-grey: #E5E5E5;
+$extra-light-grey: #E6E6E6;
+$orange: #FA6622;
+$green: #19a743;
+$green2: #1d9c34;
+$red: #e62319;
+$purple: #9d29ba;
+$teal: #1fc0bf;
+$yellow: #fbc124;
+$dark-black: #000000;
+
+$flag-purple: #750787;
+$flag-blue: #004DFF;
+$flag-green: #008026;
+$flag-yellow: #FFED00;
+$flag-orange: #FF8C00;
+$flag-red: #E40303;
+
+$greater-color: #33b8f2;
+$less-color: #81d102;
+$none-color: #ff8b00;
+
+/************
+
+Shadow
+
+************/
+
+$shadow-standard: 0px 0px 15px rgba(0, 0, 0, 0.15);
+$shadow-big: 0px 0px 30px rgba(0, 0, 0, 0.80);
+
+/************
+
+Breakpoints
+
+************/
+
+
+$three-d-breakpoint: 1100px;
+
+
+@mixin BoxShadowHelper($level){
+   @if $level == 1 {
+        box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    }
+    @if $level == 2 {
+        box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    }
+    @if $level == 3 {
+        box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    }
+    @if $level == 4 {
+        box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    }
+    @if $level == 5 {
+        box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+    }
+}
+
+
+/************
+
+Animations
+
+************/
+
+@keyframes fadeOut {
+    0%   {opacity: 1; transform: scale(1);}
+
+    100% {opacity: 1;-webkit-transform: scale(0); visibility: collapse;}
+}
+
+
+/************
+
+Fonts
+
+************/
+
+@font-face {
+    font-family: 'Futura Today Light';
+    src: url('http://www.gannett-cdn.com/GDContent/global/fonts/futura_today_light.eot') format('eot');
+    src: url('http://www.gannett-cdn.com/GDContent/global/fonts/futura_today_light.woff') format('woff'),
+         url('http://www.gannett-cdn.com/GDContent/global/fonts/futura_today_light.ttf') format('truetype'),
+         url('http://www.gannett-cdn.com/GDContent/global/fonts/futura_today_light.svg') format('svg');
+    font-weight: 100;
+}
+
+@font-face {
+    font-family: 'Futura Today Normal';
+    src: url('http://www.gannett-cdn.com/GDContent/global/fonts/futura_today_normal.eot') format('eot');
+    src: url('http://www.gannett-cdn.com/GDContent/global/fonts/futura_today_normal.woff') format('woff'),
+         url('http://www.gannett-cdn.com/GDContent/global/fonts/futura_today_normal.ttf') format('truetype');
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: 'Futura Today Demibold';
+    src: url('http://www.gannett-cdn.com/GDContent/global/fonts/futura_today_demibold.eot') format('eot');
+    src: url('http://www.gannett-cdn.com/GDContent/global/fonts/futura_today_demibold.woff') format('woff'),
+         url('http://www.gannett-cdn.com/GDContent/global/fonts/futura_today_demibold.ttf') format('truetype');
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: 'Futura Today Bold';
+    src: url('http://www.gannett-cdn.com/GDContent/global/fonts/futura_today_bold.eot') format('eot');
+    src: url('http://www.gannett-cdn.com/GDContent/global/fonts/futura_today_bold.woff') format('woff'),
+         url('http://www.gannett-cdn.com/GDContent/global/fonts/futura_today_bold.ttf') format('truetype');
+    font-weight: 700;
+}

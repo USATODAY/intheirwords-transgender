@@ -1,0 +1,54 @@
+.iapp-name-input {
+   background: none;
+   border-image: none;
+   border-style: none;
+   border-bottom: solid 4px $dark-grey;
+   box-shadow: none;
+   color: $dark-grey;
+   font-family: "Futura Today Demibold", Arial,sans-serif;
+   font-size: 1.2em;
+   margin-bottom: 1em;
+   padding: .5em;
+   text-align: center;
+   transition: all 250ms ease;
+   -webkit-appearance: none; 
+
+   &:focus {
+        border-bottom: solid 4px $blue;
+        outline: none;
+   }
+
+   ::-webkit-input-placeholder {
+     color: red;
+  }
+
+  :-moz-placeholder { /* Firefox 18- */
+     color: red;  
+  }
+
+  ::-moz-placeholder {  /* Firefox 19+ */
+     color: red;  
+  }
+
+  :-ms-input-placeholder {  
+     color: red;  
+  }
+}
+
+.iapp-name-input-panel, .iapp-name-info {
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.iapp-name-skip-button {
+    color: $dark-grey; 
+    margin: 0.5em auto;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.iapp-name-back-button {
+    position: absolute;
+    right: 1em;
+    top: 1em;
+}

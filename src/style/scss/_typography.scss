@@ -1,4 +1,15 @@
-html { font-weight: normal; font-family: "Futura Today Normal", Arial,sans-serif;}
+html { 
+  font-weight: normal; 
+  font-family: "Futura Today Normal", 
+  Arial,sans-serif;
+}
+
+.iapp-wrap {
+  font-size: 100%;
+  @media (min-width: 1200px) {
+    font-size: 150%;
+  }
+}
 
 h1, h2, h3, h4, h5, h6 {
   font-family: "Futura Today Bold", Arial,sans-serif;
@@ -20,7 +31,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .detail-header {
-  font-family: "Futura Today DemiBold", Arial,sans-serif;
+  font-family: "Futura Today Demibold", Arial,sans-serif;
 }
 
 .info-text {
@@ -31,3 +42,41 @@ h1, h2, h3, h4, h5, h6 {
 strong {
   font-family: "Futura Today Bold", Arial,sans-serif;
 }
+
+.iapp-content-wrap p {
+    margin: 1em 0;
+}
+
+.iapp-panel-text-main {
+  font-family: "Futura Today Normal", Arial,sans-serif;
+  font-size: 1.35rem;
+  text-align: center;
+  text-transform: uppercase;
+  p {
+    font-family: "Futura Today Normal", Arial,sans-serif;
+    font-size: 1.35rem;
+    margin: 1em auto;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  @media(min-width: 1200px) {
+      font-size: 1.8rem;
+      p {
+        font-size: 1.8rem;
+      }
+  }
+}
+
+.title-letter {
+    // font-size: 0.7em;
+    margin-right: -0.20em;
+    position: relative;
+}
+
+.title-letter0, .title-letter6, .title-letter12 { color: $flag-purple; }
+.title-letter1, .title-letter7, .title-letter13 { color: $flag-blue; }
+.title-letter2, .title-letter8 { color: $flag-green; }
+.title-letter3, .title-letter9 { color: $flag-yellow; }
+.title-letter4, .title-letter10 { color: $flag-orange; }
+.title-letter5, .title-letter11 { color: $flag-red; }

@@ -1,0 +1,60 @@
+@keyframes spin {
+  100% {
+    transform:rotate(360deg);
+  }
+}
+
+.iapp-preloader {
+  background: $extra-light-grey;
+  bottom: 0;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100%;
+  z-index: 501;
+  .loader-img {
+    animation: spin 2s linear infinite;
+    display: block;
+    height: 50px;
+    width: 50px;
+  }
+}
+
+.loader-img-wrap{
+  // animation: spin 1.5s linear infinite;
+  display: block;
+  height: 50px;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 50px;
+}
+
+.loader-logo {
+  display: block;
+  left: 50%;
+  max-width: 100%;
+  position: absolute;
+  top: 30%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+}
+
+.iapp-preload-text {
+  font-family: "Futura Today Light", Arial, sans-serif;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.site-preloader-title {
+    color: $dark-grey;
+    font-family: "Futura Today Light", Arial, sans-serif;
+    left: 50%;
+    position: absolute;
+    text-align: center;
+    transform: translate(-50%, -300%);
+    top: 50%;
+}

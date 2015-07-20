@@ -1,0 +1,153 @@
+.iapp-index-panel {
+    background-color: $light-grey;
+    color: $dark-grey;
+    @include BoxShadowHelper(3);
+    box-shadow: $shadow-standard;
+    left: auto;
+    height: 100%;
+    overflow: hidden;
+    right: 0;
+    width: 414px;
+    max-width: 100%;
+    z-index: 15;
+}
+
+.iapp-person-item, .iapp-project-promo {
+    background-color: $extra-light-grey;
+
+    width: 100%;
+    @media(min-width: 1200px) {
+        font-size: 0.8em;
+    }
+}
+
+.iapp-person-item-img {
+    width: 100%;
+}
+
+.iapp-person-bio, .iapp-person-name {
+    margin: 0;
+}
+
+.iapp-person-name {
+    margin-bottom: 0.5em;
+}
+
+.iapp-person-text {
+    font-size: 1em;
+    padding: 0.5em 1em;
+    a {
+        color: $dark-grey;
+        text-decoration: underline;
+    }
+}
+
+.iapp-clip-index {
+    background-color: $extra-light-grey;
+    color: white;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.iapp-people-index {
+    height: 100%;
+    overflow-y: auto;
+}
+
+.iapp-clip-index-item {
+    cursor: pointer;
+    width: 100%;
+
+    img {
+        width: 100%;
+    }
+}
+
+.iapp-clip-container {
+    height: auto !important;
+    // margin-top: 4em;
+}
+
+
+.iapp-clip-quote-containter {
+    // height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    height: 100%;
+    left: 0;
+    padding: 0 0.5em;
+    position: absolute;
+    top: 0;
+    transition: background 250ms ease;
+    width: 100%;
+    &:hover {
+        background: rgba(0, 0, 0, 0.25);
+    }
+    .iapp-clip-quote-text {
+        font-family: "Futura Today Light", Arial, sans-serif;
+        left: 50%;
+        position: absolute;
+        text-align: center;
+        text-transform: uppercase;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        @media(min-width: 1200px) {
+            font-size: 0.8em;
+        }
+    }
+}
+
+.iapp-index-back-close {
+    border: solid 4px white;
+    // color: white;
+    height: 60px;
+    left: 1em;
+    margin: 0;
+    position: absolute;
+    top: 1em;
+    width: 60px;
+    z-index: 10;
+}
+
+.iapp-index-close {
+    display: block;
+    position: absolute;
+    right: 1em;
+    top: 1em;
+    transform: translateZ(5px);
+    width: 60px;
+    z-index: 10;
+    img {
+        display: block;
+    }
+}
+
+.iapp-flipped .iapp-index-close {
+    display: none;
+}
+
+.iapp-person-image-wrap {
+    position: relative;
+}
+
+.iapp-person-more-video-button {
+    background-color: none;
+    border: solid 2px white;
+    border-radius: 5px;
+    bottom: 1em;
+    color: white;
+    font-size: 0.8em;
+    padding: 0.25em;
+    position: absolute;
+    right: 1em;
+    text-transform: uppercase;
+    transition: all 250ms ease;
+    @media(max-width: 600px) {
+        display: none;
+    }
+}
+
+.iapp-person-image-wrap:hover .iapp-person-more-video-button {
+    background-color: white;
+    color: $dark-grey;
+}

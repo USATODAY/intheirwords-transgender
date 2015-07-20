@@ -8,7 +8,7 @@ define([
 
     //set project default share language here
     var defaultShareLanguage = null;
-    var defaultShareImage = null
+    var defaultShareImage = null;
 
     var isMobile, fb_app_id;
     var isTablet = false;

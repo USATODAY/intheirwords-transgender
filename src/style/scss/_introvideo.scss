@@ -1,0 +1,28 @@
+
+.bgvideo {
+    margin: auto 0;
+    min-height: 100%;
+    min-width: 100%;
+    height: auto !important;
+    overflow: hidden;
+    top: 0;
+    position: absolute;
+    vertical-align: middle;
+}
+
+.iapp-intro-bg-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.iapp-intro-video-overlay {
+    background-color: transparentize($dark-black, 0.8);
+    bottom: 0;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}

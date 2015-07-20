@@ -1,0 +1,10 @@
+<% if (! isMobile) { %>
+<video id="introvid" class="bgvideo" loop autoplay poster="http://www.gannett-cdn.com/experiments/usatoday/2015/04/gay-marriage/img/intro_bg_still.jpg">
+    <source src="http://www.gannett-cdn.com/experiments/usatoday/2015/04/gay-marriage/media/<%= video_name%>.mp4" type="video/mp4" />
+    <source src="http://www.gannett-cdn.com/experiments/usatoday/2015/04/gay-marriage/media/<%= video_name%>.ogv" type="video/ogg" />
+</video>
+<% } else { %>
+<img class="iapp-intro-bg-image" src="http://www.gannett-cdn.com/experiments/usatoday/2015/04/gay-marriage/img/mobile_intro.gif" alt="">
+<% } %>
+
+<div class="iapp-intro-video-overlay"></div>

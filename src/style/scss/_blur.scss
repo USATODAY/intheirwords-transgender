@@ -1,0 +1,22 @@
+@media (min-width: $three-d-breakpoint) {
+    .iapp-blur {
+      transition: all 250ms ease;
+      // filter: url(#blur);
+      filter: blur(6px);
+
+    }
+
+    .medium-blur {
+      filter: blur(5px);
+    }
+
+    .small-blur {
+      filter: blur(3px)
+    }
+
+    .blur-filter {
+      position: absolute;
+    }
+}
+
+

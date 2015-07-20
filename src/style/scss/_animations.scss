@@ -1,0 +1,86 @@
+/************
+
+3d flip card
+
+example markup:     
+
+<div class="iapp-flip-container">
+    <div class="iapp-flip-item">
+        <div class="iapp-flip-front">This is the front</div>
+        <div class="iapp-flip-back">This is the back</div>
+    </div>
+</div>
+
+************/
+
+
+.iapp-flip-container {
+
+}
+
+.iapp-flip-item {
+    width: 100%;
+    min-height: 100%;
+    position: absolute;
+    @media (min-width: $three-d-breakpoint) {
+        perspective: 900px;
+        .iapp-flip-front {
+            transform: rotateY(0deg);
+        }
+
+        .iapp-flip-back {
+            transform: rotateY( -180deg );
+        }    transform-style: preserve-3d;
+    }
+
+    @media (max-width: $three-d-breakpoint) {
+        .iapp-flip-front {
+            tranform: translate(0, 0);
+        }
+        .iapp-flip-back {
+            transform: translate(100%, 0);
+        }
+    }
+    transition: transform 500ms;
+
+    .iapp-flip-back, .iapp-flip-front {
+
+        display: block;
+        position: absolute;
+        width: 100%;
+        min-height: 100%;
+        backface-visibility: hidden;
+        transition: transform 500ms;
+
+        * {
+            backface-visibility: hidden;
+        }
+    }
+
+    
+
+    &.iapp-flipped {
+
+        @media (min-width: $three-d-breakpoint) {
+            .iapp-flip-front {
+                transform: rotateY(-180deg);
+            }
+
+            .iapp-flip-back {
+                transform: rotateY( -360deg );
+            }
+        }
+
+        @media (max-width: $three-d-breakpoint) {
+            .iapp-flip-front {
+                transform: translate(100%, 0);
+            }
+
+            .iapp-flip-back {
+                transform: translate(0, 0);
+            }
+        }
+        
+        
+    }
+}

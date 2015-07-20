@@ -6,9 +6,6 @@ require.config({
     },
     'underscore': {
       exports: '_'
-    },
-    'mapbox': {
-      exports: 'L'
     }
   }
 });

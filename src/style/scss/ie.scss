@@ -1,0 +1,35 @@
+.iapp-wrap {
+    .iapp-people-index {
+          display: none;
+      }
+
+      .iapp-flip-container {
+        perspective: none;
+    }
+
+    .iapp-flip-item {
+        width: 100%;
+        min-height: 100%;
+        position: absolute;
+        // perspective: 900px;
+        transform-style: none;
+        transition: all 250ms ease;
+
+         .iapp-flip-front {
+            z-index: 11;
+         }
+
+        .iapp-flip-back {
+            transform: translate(100%, 0);
+            z-index:12;
+        }
+
+        &.iapp-flipped {
+            .iapp-flip-back {
+              transform: translate(0, 0);
+            }
+            transform: none;
+            
+        }
+    }
+}

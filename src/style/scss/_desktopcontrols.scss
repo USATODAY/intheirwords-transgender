@@ -1,0 +1,124 @@
+.iapp-video-desktop-controls {
+}
+
+.iapp-left-video-nav {
+    font-family: "Futura Today Normal", Arial,sans-serif;
+    font-size: 16px;
+    left: 0;
+    list-style: none;
+    padding: 1em;
+    position: absolute;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+    text-transform: uppercase;
+    top: 100px;
+    z-index: 10;
+
+    li {
+        margin-bottom: 0.5em;
+        &:hover {
+            color: $dark-grey;
+        }
+    }
+
+    @media (min-width: 1200px) {
+        font-size: 18px;
+
+        li {
+            margin-bottom: 1em;
+        }
+    }
+}
+
+.iapp-center-video-controls {
+    bottom: 1.5em;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, 0);
+    width: 200px;
+    z-index: 10;
+}
+
+.iapp-center-video-controls-button-wrap {
+    @extend .group;
+    margin-bottom: 1em;
+    .button {
+        float: left;
+        margin: 0 5px;
+        svg {
+            transition: fill 500ms ease;
+            // width: 100px;
+        }
+
+        svg.iapp-pause-icon, svg.iapp-play-icon {
+            width: 90px;
+        }
+         @media (max-width: 1100px) {
+            svg {
+                // width: 60px;
+            }
+            svg.iapp-pause-icon, svg.iapp-play-icon {
+                // width: 70px;
+            }
+        }
+
+        &:hover {
+            svg {
+                fill: white;
+            }
+        }
+    }
+
+    .iapp-button-small {
+        margin-top: 10px;
+    }
+}
+
+.iapp-center-video-replay-button, .iapp-center-video-next-button {
+    svg {
+        margin-top: 10px;
+    }
+}
+
+.iapp-play-icon {
+    transform: translate(5px, 0);
+}
+
+.iapp-play-icon, .iapp-pause-icon {
+    display: none;
+}
+
+
+.play .iapp-play-icon, .pause .iapp-pause-icon {
+    display: block;
+}
+
+.iapp-center-video-control-label {
+    float: left;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+}
+
+.iapp-center-video-controls-label-wrap {
+    @extend .group;
+}
+
+.iapp-center-video-control-label {
+    font-size: 0.6em;
+    text-align: center;
+    text-transform: uppercase;
+    width: 33.33%;
+}
+
+.iapp-video-share-button {
+    font-family: "Futura Today Normal", Arial,sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 0;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+    text-transform: uppercase;
+    &:hover {
+        color: $dark-grey;
+    }
+    @media (min-width: 1200px) {
+        font-size: 18px;
+    }
+}

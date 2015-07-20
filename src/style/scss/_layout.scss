@@ -1,0 +1,226 @@
+@mixin panel(){
+  height: 100%;
+  left: 0;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  transition: transform 500ms ease;
+  width: 100%;
+}
+
+/******
+
+default page style overrides
+
+******/
+
+html, body, .transition-wrap,  article.padded-container, .non-article-content { height: 100% !important; }
+
+footer { display: none !important;}
+
+body { min-width: 0 !important; }
+
+article {
+  background: $medium-grey !important;
+  color: white !important;
+  height: 100% !important;
+  padding: 0 !important;
+  width: 100% !important;
+}
+
+.first-margin {
+  margin-top: 0 !important;
+}
+
+section.contents, #overlay {
+  height: 100% !important;
+}
+
+div.non-article-content{
+  padding: 0;
+}
+
+.iapp-wrap {
+    @include panel();
+}
+
+
+.iapp-panel {
+    @include panel();
+    overflow-y: auto;
+}
+
+.iapp-tag-panel {
+  overflow: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+/******
+
+panel positions
+
+******/
+
+.done {
+  transform: translate(0, -100%);
+}
+
+.upcoming {
+  transform: translate(0, 100%);
+}
+
+.active {
+  transform: translate(0, 0);
+}
+
+
+.iapp-content-wrap {
+  padding: 2em;
+  margin: 3em auto 0 auto;
+  max-width: 900px;
+  position: static;
+  transform: none;
+  z-index: 5;
+  @media(min-width: 600px) {
+    left: 50%;
+    margin-top: 0;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+}
+
+.iapp-section-header {
+  text-align: center;
+}
+
+.iapp-content-card {
+  // background-color: $light-grey;
+  // box-shadow: $shadow-standard;
+  // color: $dark-grey;
+  // padding: 2em;
+}
+.iapp-header {
+  left: 1em;
+  opacity: 1;
+  position: absolute;
+  top: 1em;
+  transition: opacity 500ms ease;
+  width: 200px;
+  z-index: 10;
+
+  &.iapp-fadeOut {
+    opacity: 0;
+  }
+
+  img {
+    clear: both;
+    width: 150px;
+  }
+}
+
+.iapp-usat-logo-image {
+  height: auto;
+  width: 100%;
+}
+
+a.iapp-project-title {
+  color: white;
+  text-decoration: none;
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+  font-family: "Futura Today Light", Arial,sans-serif;
+  text-align: center;
+  width: 100%;
+  &:hover {
+    color: white
+  }
+  &:visited {
+    color: white;
+  }
+}
+
+
+.sprite-test-wrap {
+  padding-bottom: 56.25%;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: -1;
+}
+.sprite-test {
+  animation-name: sprite-test;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: steps(10);
+  width: 100%;
+  height: 100%;
+  background: url(../img/sprite-test.jpg) no-repeat;
+  background-size: 100%;
+  position: absolute;
+  top: 0;
+  // background-position: 0 00%;
+}
+
+@keyframes sprite-test {
+  0% {
+    background-position: 0% 0%; 
+  }
+
+ 
+  
+  100% {
+    background-position: 0% 100%; 
+  }
+}
+
+
+/******
+
+IE STYLES
+
+******/
+
+.lt-ie10 {
+  .iapp-people-index {
+      display: none;
+  }
+
+  .iapp-flip-container {
+    perspective: none;
+}
+
+.iapp-flip-item {
+    width: 100%;
+    min-height: 100%;
+    position: absolute;
+    // perspective: 900px;
+    transform-style: none;
+    transition: none;
+
+     .iapp-flip-front {
+      display: block;
+        z-index: 11;
+     }
+
+    .iapp-flip-back {
+        display: none;
+        transform: translate(100%, 0);
+        z-index:12;
+    }
+
+    &.iapp-flipped {
+        .iapp-flip-back {
+          display: block;
+          transform: translate(0, 0);
+        }
+        .iapp-flip-front {
+          display: none;
+        }
+        transform: none;
+        
+    }
+}
+
+}
+

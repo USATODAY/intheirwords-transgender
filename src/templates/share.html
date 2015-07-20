@@ -1,0 +1,18 @@
+<div class="iapp-share-close iapp-clickable"><img src="http://www.gannett-cdn.com/experiments/usatoday/2015/04/gay-marriage/img/close.svg" alt="close"></div>
+
+<div class="iapp-content-wrap">
+    <% if (userName != "") { %>
+    <h2 class="iapp-share-intro iapp-panel-text-main">Your turn, <%=userName%>. Continue this conversation by sharing this video.</h2>
+    <%} else { %>
+    <h2 class="iapp-share-intro iapp-panel-text-main">Your turn. Continue this conversation by sharing this video.</h2>
+    <%}%>
+    
+    <p class="iapp-share-preview"><%=sharelanguage%> #<%=hashtags%></p>
+    
+    <div class="iapp-share-buttons">
+        <a href="https://twitter.com/intent/tweet?url=<%=twitterShare%>&text=<%=encodedShare%>&hashtags=<%=hashtags%>" class="iapp-share-button iapp-share-twitter iapp-share-popup" target="_blank"><img src="http://www.gannett-cdn.com/experiments/usatoday/2015/04/gay-marriage/img/twitter.svg" alt="Twitter share"></a>
+        <a href='https://www.facebook.com/dialog/feed?display=popup&app_id=<%=fb_id%>&link=<%=fbShare%>&picture=<%=stillimage%>&name=&description=<%=encodedShare%>&redirect_uri=<%=fb_redirect%>' class="iapp-share-button iapp-share-facebook iapp-share-popup" target="_blank"><img src="http://www.gannett-cdn.com/experiments/usatoday/2015/04/gay-marriage/img/facebook.svg" alt="Facebook share"></a>
+        <a href="<%=email_link%>" class="iapp-share-button iapp-share-email"><img src="http://www.gannett-cdn.com/experiments/usatoday/2015/04/gay-marriage/img/email.svg" alt="Email share"></a>
+    </div>
+    <div id="iapp-fb-embed"></div>
+</div>

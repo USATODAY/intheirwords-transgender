@@ -1,0 +1,17 @@
+<div class="iapp-credits-close iapp-clickable"><img src="http://www.gannett-cdn.com/experiments/usatoday/2015/04/gay-marriage/img/close.svg" alt="close"></div>
+<div class="iapp-content-wrap">
+    <h2 class="iapp-section-header iapp-panel-text-main">About</h2>
+    <p class="iapp-section-text"><%=credits_intro%></p>
+    <h2 class="iapp-section-header iapp-panel-text-main">Credits</h2>
+    <h3 class="iapp-project-credits">
+        <% _.each(project_credits, function(creditObj) { 
+             if (creditObj.credit_url != null && creditObj.credit_text != "@USATODAY") { %>
+            <a href="<%=creditObj.credit_url%>" class="iapp-project-credit-link" target="_blank"><%=creditObj.credit_text%></a>,
+            <%  } else if (creditObj.credit_url != null){%>
+            <a href="<%=creditObj.credit_url%>" class="iapp-project-credit-link" target="_blank"><%=creditObj.credit_text%></a>
+            <%  } else {%>
+            <span class="iapp-project-credit-text"><%=creditObj.credit_text%></span>
+            <%  } %>
+         <%  }) %>
+    </h3>
+</div>

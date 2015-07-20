@@ -1,15 +1,67 @@
 .button {
-  background-color: $blue;
-  color: white;
+  @include BoxShadowHelper(1);
+  background-color: white;
+  border-radius: 50%;
+  border: solid 4px white;
+  color: $dark-grey;
+  font-size: 1em;
+  height: 70px;
+  line-height: 1.2;
   margin: 0 auto;
-  padding: 1em;
+  opacity: 0.75;
+  position: relative;
   text-align: center;
   text-transform: uppercase;
-  transition: background-color .5s;
-  width: 120px;
+  transition: all .5s;
+  width: 70px;
   &:hover{
+    @include BoxShadowHelper(2);
+    border: solid 4px $dark-grey;
+    color: white;
     cursor: pointer;
-    background-color: $dark-blue;
-    transition: background-color .5s;
+    background-color: $dark-grey;
+    svg {
+        fill: white;
+    }
+  }
+
+  &.hide {
+    opacity: 0;
+  }
+  svg {
+    width: 60px;
+    margin-top: 5px;
+    @media (max-width: 1200px) {
+        // width: 40px;
+    }
+  }
+
+}
+
+.iapp-button-text {
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.iapp-clickable {
+  &:hover {
+    cursor: pointer;
   }
 }
+
+.iapp-button-small {
+  height: 50px;
+  width: 50px;
+  .iapp-button-text {
+    font-size: 0.75em;
+  }
+
+}
+
+.iapp-button-large {
+    height: 90px;
+    width: 90px;
+}
+

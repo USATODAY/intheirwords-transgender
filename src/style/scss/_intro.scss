@@ -1,0 +1,27 @@
+.iapp-intro-header, .iapp-intro-chatter {
+    font-family: "Futura Today Demibold", Arial,sans-serif;
+    font-size: 3rem;
+    font-weight: 400;
+    margin-bottom: 0.25em;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+    @media (max-width: 600px) {
+        font-size: 2.5rem;
+    }
+}
+
+.iapp-content-card {
+    position: relative;
+    z-index: 5;
+}
+
+.iapp-intro-panel {
+    overflow-y: hidden;
+}
+
+.iapp-intro-subtitle {
+    font-family: "Futura Today Light", Arial,sans-serif;
+    margin-bottom: 1.5em;
+    margin-top: 0;
+    text-align: center;
+    text-transform: uppercase;
+}
