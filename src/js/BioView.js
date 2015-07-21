@@ -19,8 +19,9 @@ define(
             render: function() {
                 this.$el.html(this.template());
               
-                this.renderPeople();
+                // this.renderPeople();
                 this.renderClips();
+                this.$('.iapp-flip-item').addClass('iapp-flipped');
   
                 return this;
             },
@@ -71,6 +72,9 @@ define(
             template: templates['indextab.html'],
             className: 'iapp-panel upcoming iapp-index-panel iapp-flip-container',
             onIndexShow: function() {
+                this.$('.iapp-clip-container').isotope({
+                    filter: "*"
+                });
                 this.$el.addClass('active').removeClass('upcoming');
             },
             onIndexHide: function() {

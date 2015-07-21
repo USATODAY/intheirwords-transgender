@@ -35,6 +35,7 @@ define(
         },
         events: {
             'click .iapp-video-more-button': 'onMoreClick',
+            'click .iapp-video-bio-button': 'onBioClick',
             'click .iapp-video-discuss-button': 'onShareClick',
             'click .iapp-video-share-button': 'onVideoShareClick',
             'click .iapp-comment-button': 'onCommentClick',
@@ -82,6 +83,10 @@ define(
             });
 
             
+        },
+        onBioClick: function() {
+            console.log("bio click");
+            Backbone.trigger('bio:show');
         },
         onMoreClick: function() {
             Analytics.trackEvent("More videos button clicked");

@@ -12,13 +12,14 @@ define(
     'views/NameView',
     'views/VideoView',
     'views/IndexView',
+    'views/BioView',
     'collections/VideoCollection',
     'collections/PeopleCollection',
     'router',
     'models/config',
     'templates'
   ],
-  function(jQuery, _, Backbone, dataManager, Analytics, BrightcoveView, IntroView, TagsView, TagCollection, NameView, VideoView, IndexView, VideoCollection, PeopleCollection, router, config, templates){
+  function(jQuery, _, Backbone, dataManager, Analytics, BrightcoveView, IntroView, TagsView, TagCollection, NameView, VideoView, IndexView, BioView, VideoCollection, PeopleCollection, router, config, templates){
         return Backbone.View.extend({
             initialize: function() {
                 this.listenTo(Backbone, "dataReady", this.onDataReady);
@@ -89,9 +90,9 @@ define(
                // introView.renderVideo();
                this.subViews.push(introView);
 
-               var nameView = new NameView();
-               this.$el.append(nameView.render().el);
-               this.subViews.push(nameView);
+               // var nameView = new NameView();
+               // this.$el.append(nameView.render().el);
+               // this.subViews.push(nameView);
 
                var tagsView = new TagsView({collection: new TagCollection(dataManager.data.tags)});
                this.$el.append(tagsView.render().el);
@@ -118,11 +119,11 @@ define(
                 this.currentSubView++;
                 var newSub = this.subViews[this.currentSubView];
 
-                if (this.currentSubView == 3) {
-                    this.$el.append(this.subViews[3].render().el);
-                    this.subViews[3].renderVideo();
+                if (this.currentSubView == 2) {
+                    this.$el.append(this.subViews[2].render().el);
+                    this.subViews[2].renderVideo();
 
-                    this.$el.append(this.subViews[4].render().el);
+                    this.$el.append(this.subViews[3].render().el);
                 }
 
                 oldSub.$el.removeClass('active').addClass('done');
@@ -130,12 +131,12 @@ define(
             },
             goToVideo: function(videoModel) {
                 var oldSub = this.subViews[this.currentSubView];
-                this.currentSubView = 3;
+                this.currentSubView = 2;
                 var newSub = this.subViews[this.currentSubView];
-                this.$el.append(this.subViews[3].render(videoModel).el);
-                this.subViews[3].renderVideo();
+                this.$el.append(this.subViews[2].render(videoModel).el);
+                this.subViews[2].renderVideo();
 
-                this.$el.append(this.subViews[4].render().el);
+                this.$el.append(this.subViews[3].render().el);
                 oldSub.$el.removeClass('active').addClass('done');
                 newSub.$el.removeClass('upcoming').addClass('active');
             },
