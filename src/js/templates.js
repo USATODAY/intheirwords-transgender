@@ -19,13 +19,13 @@ function print() { __p += __j.call(arguments, '') }
 with (obj) {
 
  if (! isMobile) { ;
-__p += '\n<video id="introvid" class="bgvideo" loop autoplay poster="http://www.gannett-cdn.com/experiments/usatoday/2015/04/gay-marriage/img/intro_bg_still.jpg">\n    <source src="http://www.gannett-cdn.com/experiments/usatoday/2015/04/gay-marriage/media/' +
+__p += '\n<video id="introvid" class="bgvideo" loop autoplay poster="http://www.gannett-cdn.com/experiments/usatoday/2015/04/gay-marriage/img/intro_bg_still.jpg">\n    <source src="http://www.gannett-cdn.com/experiments/usatoday/2015/07/intheirwords-transgender/media/' +
 ((__t = ( video_name)) == null ? '' : __t) +
-'.mp4" type="video/mp4" />\n    <source src="http://www.gannett-cdn.com/experiments/usatoday/2015/04/gay-marriage/media/' +
+'.mp4" type="video/mp4" />\n    <source src="http://www.gannett-cdn.com/experiments/usatoday/2015/07/intheirwords-transgender/media/' +
 ((__t = ( video_name)) == null ? '' : __t) +
 '.ogv" type="video/ogg" />\n</video>\n';
  } else { ;
-__p += '\n<img class="iapp-intro-bg-image" src="http://www.gannett-cdn.com/experiments/usatoday/2015/04/gay-marriage/img/mobile_intro.gif" alt="">\n';
+__p += '\n<img class="iapp-intro-bg-image" src="http://www.gannett-cdn.com/experiments/usatoday/2015/07/intheirwords-transgender/img/mobile_bg.gif" alt="">\n';
  } ;
 __p += '\n\n<div class="iapp-intro-video-overlay"></div>\n';
 
