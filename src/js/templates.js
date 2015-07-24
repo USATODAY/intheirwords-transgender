@@ -90,7 +90,9 @@ __p += '\n    \n    <p class="iapp-share-preview">' +
 ((__t = (fbShare)) == null ? '' : __t) +
 '&picture=' +
 ((__t = (stillimage)) == null ? '' : __t) +
-'&name=&description=' +
+'&name=' +
+((__t = (encodedTitle)) == null ? '' : __t) +
+'&description=' +
 ((__t = (encodedShare)) == null ? '' : __t) +
 '&redirect_uri=' +
 ((__t = (fb_redirect)) == null ? '' : __t) +

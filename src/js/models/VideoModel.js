@@ -4,7 +4,7 @@ define(
     'underscore',
     'backbone',
     'helper',
-    'models/config'
+    'config'
   ],
   function(jQuery, _, Backbone, helper, config){
 
@@ -33,6 +33,7 @@ define(
                 'fbShare': this.createFbShareURL(),
                 'twitterShare': this.createTwitterShareURL(),
                 'encodedShare': encodeURIComponent(this.get('sharelanguage')),
+                'encodedTitle': encodeURIComponent(config.projectTitle),
                 'fb_id': config.fb_app_id,
                 'fb_redirect': 'http://' + window.location.hostname + '/pages/interactives/fb-share/',
                 'email_link': this.createEmailLink(),
