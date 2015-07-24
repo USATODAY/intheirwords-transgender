@@ -38,7 +38,6 @@ define(
         },
         userName: '',
         onUserSet: function() {
-            console.log("on user set");
             this.render();
             _.defer(function() {
                 this.$('.iapp-name-input-panel').removeClass('active').addClass('done');

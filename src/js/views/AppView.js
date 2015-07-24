@@ -84,7 +84,6 @@ define(
             template: templates["app.html"],
             subViews: [],
             addSubViews: function() {
-                // console.log(dataManager);
                var introView = new IntroView();
                this.$el.append(introView.render(dataManager.data).el);
                // introView.renderVideo();

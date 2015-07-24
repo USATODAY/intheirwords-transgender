@@ -54,7 +54,6 @@ define(
         className: 'iapp-panel iapp-video-panel upcoming',
         template: templates['video.html'],
         render: function(videoModel) {
-            // console.log(this.collection);
             if (videoModel !== undefined) {
                 this.selectedVideoModel = videoModel;
             } 
@@ -77,7 +76,6 @@ define(
             this.$el.append(this.brightcoveView.render().el);
             this.brightcoveView.activate();
 
-            // console.log(brightcoveView);
             var currentVideo = this.collection.find(function(video) {
                 return video.isActive === true;
             });
@@ -85,7 +83,6 @@ define(
             
         },
         onBioClick: function() {
-            console.log("bio click");
             Backbone.trigger('bio:show');
         },
         onMoreClick: function() {
@@ -250,7 +247,6 @@ define(
                 this.shareView.addFbEmbed();
             } else {
                 if (this.videoShareView === undefined) {
-                    console.log("add video share");
                     this.videoShareView = new VideoShareView({model: this.selectedVideoModel});
                     $('.iapp-wrap').append(this.videoShareView.render().el);
                 } else {
@@ -289,7 +285,6 @@ define(
         },
         onVideoEnded: function() {
             Analytics.trackEvent("Video finished");
-            console.log("video ended");
             if (this.collection._availableVids.length > 0) {
                 var selectedVideoModel = this.collection.pickVideo();
                 this.updateView(selectedVideoModel);
@@ -301,7 +296,6 @@ define(
         },
 
         onVideoLoad: function() {
-            console.log("video load");
             var _this = this;
             _.delay(function() {
                 this.$('.iapp-video-loader').addClass('done');
