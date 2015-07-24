@@ -260,7 +260,7 @@ define(
                 }
 
                 if (this.projectShareView === undefined) {
-                    this.projectShareView = new ProjectShareView({model: new ShareModel({default_share_language: dataManager.data.project_share_text, still_image: 'http://www.gannett-cdn.com/experiments/usatoday/2015/04/gay-marriage/img/fb-post.jpg'})});
+                    this.projectShareView = new ProjectShareView({model: new ShareModel({default_share_language: dataManager.data.project_share_text, still_image: config.defaultShareImage })});
                     $('.iapp-wrap').append(this.projectShareView.render().el);
                 }
 
