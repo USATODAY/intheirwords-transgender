@@ -19,8 +19,9 @@ define(
             render: function() {
                 this.$el.html(this.template());
               
-                this.renderPeople();
+                // this.renderPeople();
                 this.renderClips();
+                this.$('.iapp-flip-item').addClass('iapp-flipped');
   
                 return this;
             },
@@ -32,16 +33,12 @@ define(
                     
                     _this.$('.iapp-people-index').append(personView.render().el);
                 });
-                
-                var gayMarriageUrl = this.getProjectUrl('InTheirWords-same-sex-marriage');
-                this.$('.iapp-people-index').append(this.otherProjectLinkTemplate({link_image: "http://www.gannett-cdn.com/experiments/usatoday/2015/07/intheirwords-transgender/img/intheirwords-lgbt.jpg", link_url: gayMarriageUrl, link_text: "#InTheirWords Same-Sex Marriage", link_info: "Our country is at a crossroads. In April, the Supreme Court will hear oral arguments about whether state bans on same-sex marriages are constitutional. Men and women within the gay community share their stories about why they want federal marriage rights."}));
-
-                var womenHistoryUrl = this.getProjectUrl('InTheirWords-women');
-                this.$('.iapp-people-index').append(this.otherProjectLinkTemplate({link_image: "http://www.gannett-cdn.com/experiments/usatoday/2015/04/gay-marriage/img/intheirwords-women.jpg", link_url: womenHistoryUrl, link_text: "#InTheirWords Women's History", link_info: "Women in America vote, run for public office and make up almost half of the workforce. Yet there are still challenges facing women in the USA. Hear women talk about issues, including pay equity, paid family leave, sexism and beauty standards."}));
 
                 var blackHistoryUrl = this.getProjectUrl('InTheirWords');
                 this.$('.iapp-people-index').append(this.otherProjectLinkTemplate({link_image: "http://www.gannett-cdn.com/experiments/usatoday/2015/04/gay-marriage/img/intheirwords-blackhistory.jpg", link_url: blackHistoryUrl, link_text: "#InTheirWords Black History", link_info: "There is a new generation of voices shaping our national conversation about being black in the USA. We want to connect you to some of these voices."}));
                 
+                var womenHistoryUrl = this.getProjectUrl('InTheirWords-women');
+                this.$('.iapp-people-index').append(this.otherProjectLinkTemplate({link_image: "http://www.gannett-cdn.com/experiments/usatoday/2015/04/gay-marriage/img/intheirwords-women.jpg", link_url: womenHistoryUrl, link_text: "#InTheirWords Women's History", link_info: "Women in America vote, run for public office and make up almost half of the workforce. Yet there are still challenges facing women in the USA. Hear women talk about issues, including pay equity, paid family leave, sexism and beauty standards."}));
             },
             renderClips: function() {
                 var _this = this;
@@ -75,6 +72,9 @@ define(
             template: templates['indextab.html'],
             className: 'iapp-panel upcoming iapp-index-panel iapp-flip-container',
             onIndexShow: function() {
+                this.$('.iapp-clip-container').isotope({
+                    filter: "*"
+                });
                 this.$el.addClass('active').removeClass('upcoming');
             },
             onIndexHide: function() {

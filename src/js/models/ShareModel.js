@@ -3,7 +3,7 @@ define(
     'jquery',
     'underscore',
     'backbone',
-    'models/config'
+    'config'
   ],
   function(jQuery, _, Backbone, config){
 
@@ -30,7 +30,7 @@ define(
                 'baseURL': baseURL,
                 'fbShare': this.createFbShareURL(baseURL),
                 'twitterShare': this.createTwitterShareURL(baseURL),
-                'share_language': this.get('default_share_language'),  
+                'share_language': config.defaultShareLanguage,
                 'encodedShare': encodeURIComponent(this.get('default_share_language')),
                 'fb_id': config.fb_app_id,
                 'email_link': this.createEmailLink(baseURL)
@@ -53,7 +53,7 @@ define(
         },
 
         createEmailLink: function(url) {
-            return "mailto:?body=" + encodeURIComponent(this.get('sharelanguage')) +  "%0d%0d" + this.createTwitterShareURL(url) + "&subject=";
+            return "mailto:?subject=" + config.projectTitle + "&body=" + encodeURIComponent(config.defaultShareLanguage) +  "%0d%0d" + this.createTwitterShareURL(url) + "&subject=";
         },
 
         updateLanguage: function(newShareStr) {

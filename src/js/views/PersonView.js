@@ -23,7 +23,6 @@ define(
             className: 'iapp-person-item',
             onClick: function() {
                 Analytics.trackEvent("Person Index Person Clicked");
-                console.log(this.model);
                 Backbone.trigger("person:selected", this.model);
             }
         });

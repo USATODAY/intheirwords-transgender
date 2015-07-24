@@ -35,6 +35,7 @@ define(
         },
         events: {
             'click .iapp-video-more-button': 'onMoreClick',
+            'click .iapp-video-bio-button': 'onBioClick',
             'click .iapp-video-discuss-button': 'onShareClick',
             'click .iapp-video-share-button': 'onVideoShareClick',
             'click .iapp-comment-button': 'onCommentClick',
@@ -53,7 +54,6 @@ define(
         className: 'iapp-panel iapp-video-panel upcoming',
         template: templates['video.html'],
         render: function(videoModel) {
-            // console.log(this.collection);
             if (videoModel !== undefined) {
                 this.selectedVideoModel = videoModel;
             } 
@@ -76,12 +76,14 @@ define(
             this.$el.append(this.brightcoveView.render().el);
             this.brightcoveView.activate();
 
-            // console.log(brightcoveView);
             var currentVideo = this.collection.find(function(video) {
                 return video.isActive === true;
             });
 
             
+        },
+        onBioClick: function() {
+            Backbone.trigger('bio:show');
         },
         onMoreClick: function() {
             Analytics.trackEvent("More videos button clicked");
@@ -245,7 +247,6 @@ define(
                 this.shareView.addFbEmbed();
             } else {
                 if (this.videoShareView === undefined) {
-                    console.log("add video share");
                     this.videoShareView = new VideoShareView({model: this.selectedVideoModel});
                     $('.iapp-wrap').append(this.videoShareView.render().el);
                 } else {
@@ -255,7 +256,7 @@ define(
                 }
 
                 if (this.projectShareView === undefined) {
-                    this.projectShareView = new ProjectShareView({model: new ShareModel({default_share_language: dataManager.data.project_share_text, still_image: 'http://www.gannett-cdn.com/experiments/usatoday/2015/04/gay-marriage/img/fb-post.jpg'})});
+                    this.projectShareView = new ProjectShareView({model: new ShareModel({default_share_language: dataManager.data.project_share_text, still_image: config.defaultShareImage })});
                     $('.iapp-wrap').append(this.projectShareView.render().el);
                 }
 
@@ -284,7 +285,6 @@ define(
         },
         onVideoEnded: function() {
             Analytics.trackEvent("Video finished");
-            console.log("video ended");
             if (this.collection._availableVids.length > 0) {
                 var selectedVideoModel = this.collection.pickVideo();
                 this.updateView(selectedVideoModel);
@@ -296,7 +296,6 @@ define(
         },
 
         onVideoLoad: function() {
-            console.log("video load");
             var _this = this;
             _.delay(function() {
                 this.$('.iapp-video-loader').addClass('done');

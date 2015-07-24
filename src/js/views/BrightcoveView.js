@@ -23,7 +23,6 @@ define(
               return this;
             },
             activate: function() {
-                console.log("brightcove view activated");
               brightcove.createExperiences();
             },
             reformatVideos: function() {
@@ -69,7 +68,6 @@ define(
             
             },
             onVideoReady: function(bcObj) {
-              console.log("brightcove view video ready listener");
               this.bcPlayer = bcObj.player;
               this.bcExperience = bcObj.experience;
               this.reformatVideos();
@@ -90,9 +88,7 @@ define(
             },
 
             onVideoEnded: function(bcObj) {
-              // console.log(bcObj.experience);
               // bcObj.experience.unload();
-              // console.log("remove");
               // this.remove();
             } 
         });

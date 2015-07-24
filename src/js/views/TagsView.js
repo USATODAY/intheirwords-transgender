@@ -29,7 +29,7 @@ define(
             var config = { isMobile: false};
 
             var _this = this;
-            this.$el.html(this.template({tag_text: dataManager.data.tag_text, greeting: this.getGreeting()}));
+            this.$el.html(this.template({tag_text: dataManager.data.tag_text, head: dataManager.data.project_head, greeting: this.getGreeting()}));
             
             this.collection.each(function(tagModel) {
                  var tagView = new TagView({model: tagModel});
@@ -83,7 +83,7 @@ define(
             } else {
                 result = greetings[2];
             }
-            return result;
+            return result.toUpperCase();
         },
         renderGreeting: function(selectedVideoModel) {
             this.$('.iapp-tag-intro').html(this.greetingTemplate(selectedVideoModel.toJSON()));

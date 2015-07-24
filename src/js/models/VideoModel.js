@@ -4,7 +4,7 @@ define(
     'underscore',
     'backbone',
     'helper',
-    'models/config'
+    'config'
   ],
   function(jQuery, _, Backbone, helper, config){
 
@@ -33,6 +33,7 @@ define(
                 'fbShare': this.createFbShareURL(),
                 'twitterShare': this.createTwitterShareURL(),
                 'encodedShare': encodeURIComponent(this.get('sharelanguage')),
+                'encodedTitle': encodeURIComponent(config.projectTitle),
                 'fb_id': config.fb_app_id,
                 'fb_redirect': 'http://' + window.location.hostname + '/pages/interactives/fb-share/',
                 'email_link': this.createEmailLink(),
@@ -63,7 +64,7 @@ define(
         },
 
         createEmailLink: function(videoID) {
-            return "mailto:?body=" + encodeURIComponent(this.get('sharelanguage')) +  "%0d%0d" + this.createTwitterShareURL(videoID) + "&subject=";
+            return "mailto:?subject=" + config.projectTitle + "&body=" + encodeURIComponent(this.get('sharelanguage')) +  "%0d%0d" + this.createTwitterShareURL(videoID) + "&subject=";
         }
     });
 

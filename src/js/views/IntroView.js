@@ -32,7 +32,6 @@ define(
         },
 
         resizeVideo: function() {
-            console.log('window resize');
             var $videoEl = this.$('video');
             if (window.innerWidth / window.innerHeight < 1920 / 1080) {
                 var numWidth = 100 * ((1920 / 1080) / (window.innerWidth / window.innerHeight));
