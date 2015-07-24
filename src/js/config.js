@@ -8,7 +8,7 @@ define([
 
     //set project default share language here
     var defaultShareLanguage = null;
-    var defaultShareImage = null;
+    var defaultShareImage = "http://www.gannett-cdn.com/experiments/usatoday/2015/07/intheirwords-transgender/img/promo.jpg";
 
     var isMobile, fb_app_id;
     var isTablet = false;
