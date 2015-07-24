@@ -64,7 +64,7 @@ define(
         },
 
         createEmailLink: function(videoID) {
-            return "mailto:?body=" + encodeURIComponent(this.get('sharelanguage')) +  "%0d%0d" + this.createTwitterShareURL(videoID) + "&subject=";
+            return "mailto:?subject=" + config.projectTitle + "&body=" + encodeURIComponent(this.get('sharelanguage')) +  "%0d%0d" + this.createTwitterShareURL(videoID) + "&subject=";
         }
     });
 
