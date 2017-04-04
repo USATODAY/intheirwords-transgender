@@ -27,7 +27,6 @@ define(
             if (typeof this.attributes.tags == "string"){ 
                 this.attributes.tags = this.attributes.tags.split(', ');
             }
-
             //set sharable language and urls for each model
             this.set({
                 'fbShare': this.createFbShareURL(),

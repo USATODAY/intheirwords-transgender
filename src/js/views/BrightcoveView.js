@@ -17,8 +17,6 @@ define(
             template: templates['brightcove.html'],
             className: 'iapp-brightcove-wrap',
             render: function() {
-
-              
               this.$el.html(this.template(this.model.toJSON()));
               return this;
             },

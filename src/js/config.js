@@ -31,6 +31,7 @@ define([
     }
 
     fb_app_id = staticInfo.facebook.app_id;
+    var page_ssl = window.location.protocol == 'https:';
 
     return {
         image_path: imagePath,
@@ -42,6 +43,7 @@ define([
         isTablet: isTablet,
         defaultShareLanguage: defaultShareLanguage,
         defaultShareImage: defaultShareImage,
-        isIframe: blnIframeEmbed
+        isIframe: blnIframeEmbed,
+        page_ssl: page_ssl
     };
 });
