@@ -38,7 +38,8 @@ define(
                 'fb_redirect': 'http://' + window.location.hostname + '/pages/interactives/fb-share/',
                 'email_link': this.createEmailLink(),
                 'first_name': helper.cleanTag(this.get('first_name')),
-                'isMobile': config.isMobile
+                'isMobile': config.isMobile,
+                'page_ssl': config.page_ssl
             });
             
 

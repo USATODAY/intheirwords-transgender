@@ -6,6 +6,10 @@ Interactives video player with single clip
 
 
 <object id="myExperience<%=brightcoveid%>" class="BrightcoveExperience">
+  <% if (page_ssl) { %>
+    <param name="secureConnections" value="true" />
+    <param name="secureHTMLConnections" value="true" />
+  <%}%>
   <param name="bgcolor" value="#FFFFFF" />
   <param name="width" value="640" />
   <param name="height" value="390" />

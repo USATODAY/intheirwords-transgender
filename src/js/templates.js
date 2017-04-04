@@ -132,13 +132,18 @@ return __p
 
 this["templates"]["brightcove.html"] = function(obj) {
 obj || (obj = {});
-var __t, __p = '', __e = _.escape;
+var __t, __p = '', __e = _.escape, __j = Array.prototype.join;
+function print() { __p += __j.call(arguments, '') }
 with (obj) {
 __p += '<!-- Start of Brightcove Player -->\n\n<div style="display:none">\nInteractives video player with single clip \n</div>\n\n\n<object id="myExperience' +
 ((__t = (brightcoveid)) == null ? '' : __t) +
-'" class="BrightcoveExperience">\n  <param name="bgcolor" value="#FFFFFF" />\n  <param name="width" value="640" />\n  <param name="height" value="390" />\n  <param name="playerID" value="4191673832001" />\n  <param name="playerKey" value="AQ~~,AAAABvaL8JE~,ufBHq_I6Fnz1-5Tv-uC_zxqKqCr-Phqa" />\n  <param name="isSlim" value="true" />\n  <param name="dynamicStreaming" value="true" />\n  <param name="includeAPI" value="true" />\n    \n  <param name="@videoPlayer" value="' +
+'" class="BrightcoveExperience">\n  ';
+ if (page_ssl) { ;
+__p += '\n    <param name="secureConnections" value="true" />\n    <param name="secureHTMLConnections" value="true" />\n  ';
+};
+__p += '\n  <param name="bgcolor" value="#FFFFFF" />\n  <param name="width" value="640" />\n  <param name="height" value="390" />\n  <param name="playerID" value="4191673832001" />\n  <param name="playerKey" value="AQ~~,AAAABvaL8JE~,ufBHq_I6Fnz1-5Tv-uC_zxqKqCr-Phqa" />\n  <param name="isSlim" value="true" />\n  <param name="dynamicStreaming" value="true" />\n  <param name="includeAPI" value="true" />\n    \n  <param name="@videoPlayer" value="' +
 ((__t = (brightcoveid)) == null ? '' : __t) +
-'" />\n  <param name="templateReadyHandler" value="onTemplateReady" />\n  <param name="wmode" value="opaque" />\n  <param name="autoStart" value="false" />\n</object>\n\n\n<!-- End of Brightcove Player -->\n';
+'" />\n  <param name="templateReadyHandler" value="onTemplateReady" />\n  <param name="wmode" value="opaque" />\n  <param name="autoStart" value="false" />\n</object>\n\n\n<!-- End of Brightcove Player -->';
 
 }
 return __p

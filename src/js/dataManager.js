@@ -13,10 +13,7 @@ define(
     if ((hostname == "localhost" || hostname == "10.0.2.2")) {
         dataURL = 'data/data.json';
     } else {
-
-
-        dataURL = "http://" + hostname + "/services/webproxy/?url=http://www.gannett-cdn.com/experiments/usatoday/2015/07/intheirwords-transgender/data/data.json";
-
+        dataURL = "http://www.gannett-cdn.com/experiments/usatoday/2015/07/intheirwords-transgender/data/data.json";
     }
 
     return {
